@@ -1,15 +1,15 @@
-class Conta(var titular: String, var numero: Int) {
+open class Conta(var titular: String, var numero: Int) {
     var saldo = 0.0
         private set
 
 
     fun deposita(valor: Double) {
-        if (valor > saldo) {
+        if (valor > 0) {
             /*this.*/ saldo += valor
         }
     }
 
-    fun saque(valor: Double) {
+    open fun saque(valor: Double) {
         if (saldo >= valor) {
             saldo -= valor
         }
@@ -18,7 +18,7 @@ class Conta(var titular: String, var numero: Int) {
     fun transfere(valor: Double, destino: Conta): Boolean {
         if (saldo >= valor) {
             saldo -= valor
-            destino.deposita(50.0)
+            destino.deposita(valor)
             return true
         }
         return false

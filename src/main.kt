@@ -1,52 +1,35 @@
 fun main() {
 
     println("Olá Mundo!")
-    val fThiago = Funcionario(nome = "Thiago", cpf = "111.111.111-11", salario = 1000.00)
 
-    println("Funcionario ${fThiago.nome}")
-    println("cpf ${fThiago.cpf}")
-    println("salario ${fThiago.salario}")
-    println("bonificacão ${fThiago.bonificacao()}")
-    println("")
-
-    val gLeticia = Gerente(
-        nome = "Leticia",
-        cpf = "222.222.222-22",
-        salario = 2000.0,
-        senha = 1234
+    val contaPoupanca = ContaPoupanca(
+        titular = "Alex",
+        numero = 1000
     )
 
-    println("Gerente ${gLeticia.nome}")
-    println("cpf ${gLeticia.cpf}")
-    println("salario ${gLeticia.salario}")
-    println("bonificação ${gLeticia.bonificacao()}")
-    if(gLeticia.autentica(1235)){
-        println("Autenticado!")
-    } else {
-        println("Senha Errada Maluco!")
-    }
-    println("")
-
-    val dJoao = Diretor(
-        nome = "Joao",
-        cpf = "333.333.333-33",
-        salario = 3000.0,
-        senha = 3000,
-        plr = 300.0
+    val contaCorrente = ContaCorrente(
+        titular = "Fran",
+        numero = 1001
     )
 
-    println("Diretor ${dJoao.nome}")
-    println("cpf ${dJoao.cpf}")
-    println("salario ${dJoao.salario}")
-    println("bonificação ${dJoao.bonificacao()}")
-    println("Plr ${dJoao.plr}")
-    if(dJoao.autentica(3000)){
-        println("Autenticado!")
-    } else {
-        println("Senha Errada Maluco!")
-    }
-    println("")
+    contaCorrente.deposita(valor = 1000.0)
+    contaPoupanca.deposita(valor = 1000.0)
+
+    println("Saldo Poupança ${contaPoupanca.saldo}")
+    println("Saldo Corrente ${contaCorrente.saldo}")
+
+    contaCorrente.saque(valor = 100.0)
+    contaPoupanca.saque(valor = 200.0)
+
+    println("Saldo Poupança depois de saque ${contaPoupanca.saldo}")
+    println("Saldo Corrente depois de saque ${contaCorrente.saldo}")
+
+    contaCorrente.transfere(valor = 100.0, destino = contaPoupanca)
+    println("Saldo Poupança depois de transferencia ${contaPoupanca.saldo}")
+    println("Saldo Corrente depois de transferencia ${contaCorrente.saldo}")
 }
+
+
 
 
 
