@@ -19,6 +19,6 @@ class Diretor(
     }
 
     override fun bonificacao(): Double {
-        return super.bonificacao() + this.salario + this.plr
+        return (salario + plr) * 0.4
     }
 }
