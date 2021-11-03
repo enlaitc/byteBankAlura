@@ -11,18 +11,18 @@ fun testaFuncionarios() {
     println("bonificacão ${fThiago.bonificacao()}")
     println("")
 
-    val aMari = Gerente(
+    val gLeticia = Gerente(
         nome = "Leticia",
         cpf = "222.222.222-22",
         salario = 2000.0,
         senha = 1234
     )
 
-    println("Gerente ${aMari.nome}")
-    println("cpf ${aMari.cpf}")
-    println("salario ${aMari.salario}")
-    println("bonificação ${aMari.bonificacao()}")
-    if (aMari.autentica(1235)) {
+    println("Gerente ${gLeticia.nome}")
+    println("cpf ${gLeticia.cpf}")
+    println("salario ${gLeticia.salario}")
+    println("bonificação ${gLeticia.bonificacao()}")
+    if (gLeticia.autentica(1235)) {
         println("Autenticado!")
     } else {
         println("Senha Errada Maluco!")
@@ -63,7 +63,7 @@ fun testaFuncionarios() {
 
     val calculadora = CalculadoraBonificacao()
     calculadora.registra(fThiago)
-    calculadora.registra(aMari)
+    calculadora.registra(gLeticia)
     calculadora.registra(dJoao)
     calculadora.registra(aMaria)
 
