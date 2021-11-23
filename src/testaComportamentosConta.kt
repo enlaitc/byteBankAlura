@@ -22,11 +22,11 @@ fun testaComportamentosConta() {
     println(contaFran.saldo)
 
     println("Sacando na conta do Alex")
-    contaAlex.saque(150.0)
+    contaAlex.saca(150.0)
     println(contaAlex.saldo)
 
     println("Sacando na conta da Fran")
-    contaFran.saque(150.0)
+    contaFran.saca(150.0)
     println(contaFran.saldo)
 
     println("Transferência da Fran pro Alex")

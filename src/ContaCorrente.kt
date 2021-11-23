@@ -1,13 +1,13 @@
 class ContaCorrente(
     titular: String,
     numero: Int
-) : Conta(
-    titular,
-    numero
+) : ContaTransferivel(
+    titular = titular,
+    numero = numero
 ) {
 
-    override fun saque(valor: Double) {
-        val valorComTaxa = valor * 0.1
+    override fun saca(valor: Double) {
+        val valorComTaxa = valor + 0.5
         if (saldo >= valorComTaxa) {
             saldo -= valorComTaxa
         }

@@ -1,4 +1,7 @@
-abstract class Conta(var titular: String, var numero: Int) {
+abstract class Conta(
+    var titular: String,
+    var numero: Int
+) {
     var saldo = 0.0
         protected set
 
@@ -9,16 +12,8 @@ abstract class Conta(var titular: String, var numero: Int) {
         }
     }
 
-    abstract fun saque(valor: Double)
+    abstract fun saca(valor: Double)
 
-    fun transfere(valor: Double, destino: Conta): Boolean {
-        if (saldo >= valor) {
-            saldo -= valor
-            destino.deposita(valor)
-            return true
-        }
-        return false
-    }
 
 //    fun getSaldo(): Double {
 //        return saldo
